@@ -1,0 +1,12 @@
+variable "security_group_ha_wp_site" {}
+variable "aws_iam_instance_profile_s3_role_name" {}
+variable "aws_efs_file_system_ha_wp_efs" {}
+variable "ami" {}
+variable "ha_wp_pub1_id" {}
+variable "ha_wp_pub2_id" {}
+variable "ha_wp_pub3_id" {}
+variable "lb_target_group_hawpmaster" {}
+variable "lb_target_group_hawpslave" {}
+variable "min" {}
+variable "max" {}
+variable "des" {}

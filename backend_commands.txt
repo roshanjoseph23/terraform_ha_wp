@@ -1,0 +1,2 @@
+pip3 install --user -U awscli
+aws configure --profile=project
