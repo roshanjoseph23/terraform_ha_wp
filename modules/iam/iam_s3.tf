@@ -7,7 +7,7 @@ resource "aws_iam_role" "ha_wp_role" {
         {
           "Action": "sts:AssumeRole",
           "Principal": {
-            "Service": "s3.amazonaws.com"
+            "Service": "ec2.amazonaws.com"
           },
           "Effect": "Allow",
           "Sid": ""
@@ -27,12 +27,13 @@ resource "aws_iam_policy" "iampolicy" {
   policy = file("./modules/iam/iam.json")
 }
 
-resource "aws_iam_role_policy_attachment" "iam-attach" {
-  role       = aws_iam_role.ha_wp_role.name
+resource "aws_iam_policy_attachment" "iam-attach" {
+  name       = "IAM_EC2_S3"
+  roles      = [aws_iam_role.ha_wp_role.name]
   policy_arn = aws_iam_policy.iampolicy.arn
 }
 
 resource "aws_iam_instance_profile" "s3_role" {
-  name = "s3_profile"
+  name = "ha_wp_role"
   role = aws_iam_role.ha_wp_role.name
 }
