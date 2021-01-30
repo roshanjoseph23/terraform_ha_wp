@@ -115,3 +115,74 @@ is used for S3 bucket access to the IAM role which is then assigned to the Wordp
 ## To Apply
 
  - ./terraform apply -var-file="terraform.tfvars" --auto-approve
+
+
+    .
+    ├── backend
+    │   └── backend.json
+    ├── backend_commands.txt
+    ├── main.tf
+    ├── modules
+    │   ├── alb
+    │   │   ├── ha_alb.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── autoscaling
+    │   │   ├── efs.sh
+    │   │   ├── ha_asg_master.tf
+    │   │   ├── ha_asg_slave.tf
+    │   │   ├── s3sfs.sh
+    │   │   └── variables.tf
+    │   ├── Bastion
+    │   │   ├── aws_bastion.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── cloudfront
+    │   │   ├── cloudfront.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── efs
+    │   │   ├── ha_efs.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── iam
+    │   │   ├── iam.json
+    │   │   ├── iam_s3.tf
+    │   │   └── outputs.tf
+    │   ├── internet_gateway
+    │   │   ├── ha_igw.tf
+    │   │   ├── ouputs.tf
+    │   │   └── variables.tf
+    │   ├── randomise
+    │   │   ├── outputs.tf
+    │   │   ├── random.tf
+    │   │   └── variables.tf
+    │   ├── rds
+    │   │   ├── ha_rds.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── route_tables
+    │   │   ├── ha_rtb_priv.tf
+    │   │   ├── ha_rtb_pub.tf
+    │   │   └── variables.tf
+    │   ├── s3
+    │   │   ├── ha_s3.tf
+    │   │   ├── ouputs.tf
+    │   │   └── policy.json
+    │   ├── security_groups
+    │   │   ├── ha_sg_alb.tf
+    │   │   ├── ha_sg_bastion.tf
+    │   │   ├── ha_sg_efs.tf
+    │   │   ├── ha_sg_rds.tf
+    │   │   ├── ha_sg_wp.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   └── subnets
+    │       ├── ha_sub_priv.tf
+    │       ├── ha_sub_pub.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── outputs.tf
+    ├── terraform.tfvars
+    ├── tfstate.tf
+    └── variables.tf
