@@ -186,3 +186,4 @@ is used for S3 bucket access to the IAM role which is then assigned to the Wordp
     ├── terraform.tfvars
     ├── tfstate.tf
     └── variables.tf
+    `
