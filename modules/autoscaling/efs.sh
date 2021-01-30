@@ -6,4 +6,5 @@ echo ${efspoint}':/ /var/www/html nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,h
 a2enmod rewrite
 echo -e '<Directory /var/www/>\nOptions Indexes FollowSymLinks\nAllowOverride All\nOrder allow,deny\nallow from all\n</Directory>' >> /etc/apache2/apache2.conf
 service apache2 restart
+sleep 300
 mount -a
